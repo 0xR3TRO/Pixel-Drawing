@@ -1,0 +1,138 @@
+:root {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #43a047;
+  color: #111;
+}
+
+#app {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.editor-shell {
+  width: min(90vmin, 900px);
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  display: grid;
+  gap: 16px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+}
+
+.editor-title {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.status-message {
+  margin: 0;
+  min-height: 1.2rem;
+  color: #a23720;
+}
+
+.options-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.sliders {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.slider-group {
+  display: grid;
+  gap: 4px;
+}
+
+.slider-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+button {
+  border: none;
+  border-radius: 6px;
+  background-color: #43a047;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+  padding: 8px 10px;
+}
+
+button.is-active {
+  background-color: #2e7d32;
+}
+
+input[type="color"] {
+  appearance: none;
+  width: 48px;
+  height: 40px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border-radius: 6px;
+  border: 2px solid #111;
+}
+
+.canvas {
+  width: fit-content;
+  border: 1px solid #d0d0d0;
+}
+
+.grid-row {
+  display: flex;
+}
+
+.grid-cell {
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid #ececec;
+  background-color: transparent;
+}
+
+@media (max-width: 768px) {
+  .editor-shell {
+    width: min(96vmin, 720px);
+    padding: 16px;
+  }
+
+  .sliders {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-cell {
+    width: 0.85rem;
+    height: 0.85rem;
+  }
+}
