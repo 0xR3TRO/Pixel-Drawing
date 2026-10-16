@@ -16,7 +16,7 @@ const DEFAULT_COLOR = "#43a047";
 export function mountEditorApp(root: HTMLDivElement): void {
   root.innerHTML = `
     <section class="editor-shell">
-      <h1 class="editor-title">Pixel Drawing</h1>
+      <h1 class="editor-title">Pixel Editor</h1>
       <p id="status-message" class="status-message" aria-live="polite"></p>
       <div class="options-grid">
         <div class="sliders">

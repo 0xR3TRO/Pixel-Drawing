@@ -14,12 +14,10 @@
 │   └── main.ts
 ├── docs/
 │   ├── adr/
-│   ├── architecture/
-│   ├── runbooks/
-│   └── metrics/
+│   └── architecture/
 └── .github/
     ├── workflows/
-    └── pull_request_template.md
+    └── dependabot.yml
 ```
 
 ## Placement rules
@@ -27,4 +25,4 @@
 1. Domain rules and state contracts stay in `src/features/*/domain`.
 2. UI composition stays in `src/features/*/ui`.
 3. Cross-feature contracts are explicit TypeScript interfaces.
-4. Process and operational decisions belong in `docs/`.
+4. Architecture decisions are recorded as ADRs in `docs/adr/`.

@@ -1,51 +1,55 @@
-# Pixel Drawing
+# Pixel Editor
 
-Pixel Drawing to lokalny edytor pixel art w przeglądarce.  
-Repo zostało zmodernizowane do modularnego stacku TypeScript + Vite z bazowym CI, testami i security.
+Mały edytor pixel art działający lokalnie w przeglądarce. Rysujesz na siatce, wymazujesz, czyścisz — praca zapisuje się automatycznie w przeglądarce.
 
-## Stack i narzędzia
+## Funkcje
 
-- **Runtime:** przeglądarka (Vite)
-- **Język:** TypeScript (strict)
-- **Testy:** Vitest + jsdom + coverage
-- **Jakość:** ESLint + Prettier + typecheck
-- **CI:** GitHub Actions
-- **Security:** CodeQL, Dependency Review, Dependabot
+- siatka od 1×1 do 35×35
+- tryb rysowania i gumki
+- czyszczenie siatki
+- automatyczny zapis w `localStorage`
+- eksport bieżącego projektu do JSON
 
-## Szybki start
+## Uruchomienie
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Dostępne skrypty
+Otwórz adres wypisany przez Vite (domyślnie `http://localhost:5173`).
 
-- `npm run dev` - serwer developerski
-- `npm run build` - typecheck + build produkcyjny
-- `npm run preview` - podgląd builda
-- `npm run lint` - analiza statyczna
-- `npm run typecheck` - walidacja typów
-- `npm run test:run` - testy z coverage
-- `npm run format` - formatowanie
-- `npm run format:check` - walidacja formatu
+## Skrypty
 
-## Aktualne funkcje
+- `npm run dev` — serwer deweloperski
+- `npm run build` — sprawdzenie typów i build produkcyjny
+- `npm run preview` — podgląd buildu
+- `npm run lint` — ESLint
+- `npm run typecheck` — sprawdzenie typów TypeScript
+- `npm run test:run` — testy z pokryciem
+- `npm run format` / `npm run format:check` — Prettier
 
-- konfigurowalna siatka (1-35 x 1-35)
-- tryb rysowania i gumki
-- czyszczenie siatki
-- autosave projektu do `localStorage`
-- eksport projektu do JSON
+## Technologie
 
-## Struktura projektu
+- TypeScript (strict) i Vite
+- Vitest i jsdom do testów, z pokryciem
+- ESLint i Prettier
+- GitHub Actions: lint, typy, testy i build przy każdym pushu; skan CodeQL; Dependabot raz w miesiącu, zbiorczo
 
-- `src/features/editor` - domena i UI edytora
-- `src/features/project-storage` - trwałość danych
-- `src/features/export-sharing` - eksport projektu
+## Struktura
 
-Szczegóły architektury, runbooki i metryki znajdują się w `docs/`.
+- `src/features/editor` — logika siatki i interfejs edytora
+- `src/features/project-storage` — zapis w `localStorage`
+- `src/features/export-sharing` — eksport do JSON
 
-## Język
+Decyzja architektoniczna: [`docs/adr/0001-local-first-modular-frontend.md`](../docs/adr/0001-local-first-modular-frontend.md).
 
-[English](/README.md)
+## Historia
+
+Pierwsza wersja (2024) była jednym skryptem. W maju 2026 projekt przebudowano na TypeScript i Vite. W październiku 2026 repozytorium zmieniło nazwę z `Pixel-Drawing` na `pixel-editor`.
+
+## Licencja
+
+[MIT](../LICENSE)
+
+[English README](../README.md)
